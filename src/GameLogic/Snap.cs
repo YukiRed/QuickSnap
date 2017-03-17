@@ -24,7 +24,7 @@ namespace CardGames.GameLogic
 		private readonly Timer _gameTimer;
 
 		// The amount of time that must pass before a card is flipped?
-		private int _flipTime = 1000;
+		private int _flipTime = 1;
 
 		// the score for the 2 players
 		private int[] _score = new int[2];
@@ -146,12 +146,6 @@ namespace CardGames.GameLogic
 				 _topCards [0] != null && _topCards [0].Rank == _topCards [1].Rank) // and its a match
 			{
 				_score[player]++;
-				//TODO: consider playing a sound here...
-				SwinGame.LoadSoundEffectNamed ("Slap", "slap.wav");
-				SwinGame.PlaySoundEffect ("Slap");
-			}
-			else if (player >= 0 && player < _score.Length) {
-				_score [player]--;
 			}
 			else if (player >= 0 && player < _score.Length) {
 				_score [player]--;
